@@ -1,0 +1,108 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c3954;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .graduados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .graduado {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .graduado:hover {
+    transform: translateY(-5px);
+  }
+  
+  .graduado img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .graduado p {
+    margin: 10px;
+    color: #555;
+  }
+  
+/* Estilo para el botón "Regresar" */
+  /* Estilo para el botón "Regresar" */
+    .nav-container {
+      display: flex;
+      justify-content: flex-end; /* Alinea los elementos al extremo izquierdo */
+      align-items: center; /* Alinea los elementos verticalmente al centro */
+      margin: 20px; /* Ajusta el margen según necesites */
+      gap: 10px; /* Espacio entre los botones */
+    }
+    
+    /* Estilo para el botón "Regresar" */
+    .nav-container nav:nth-child(1) button {
+      color: #fff;
+      background-color: #353434;
+      border: none;
+      padding: 15px 30px; /* Aumenta el padding para hacer el botón más grande */
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .nav-container nav:nth-child(1) button:hover {
+      background-color: #ff6f00;
+    }
+    
+    .nav-container nav:nth-child(1) a {
+      text-decoration: none;
+      color: #fff; /* Color del texto del enlace */
+    }
+    
+    .nav-container nav:nth-child(1) a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Estilo para el botón "Salir" */
+    .nav-container nav:nth-child(2) button {
+      color: #fff;
+      background-color: #353434;
+      border: none;
+      padding: 15px 47px; /* Aumenta el padding para hacer el botón más grande */
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .nav-container nav:nth-child(2) button:hover {
+      background-color: #ff6f00;
+    }
+    
+    .nav-container nav:nth-child(2) a {
+      text-decoration: none;
+      color: #fff; /* Color del texto del enlace */
+    }
+    
+    .nav-container nav:nth-child(2) a:hover {
+      text-decoration: underline;
+    }
+  

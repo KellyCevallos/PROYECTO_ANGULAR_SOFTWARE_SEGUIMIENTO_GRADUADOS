@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/Angular/src/app/datos/datos.component.css">
+  <title>Actualizar Datos</title>
+</head>
+<body>
+  <nav>
+    <a href="/Angular/src/app/menu/menu.component.html"><button><h3>Regresar al Menú</h3></button></a>
+  </nav>
+
+  <div class="container">
+    <h2>Actualizar Datos</h2>
+    <form name="modifyForm" onsubmit="return validateModifyForm()" action="/Angular/src/app/perfil/perfil.component.html" method="post">
+      <label for="cedula">Cédula:</label>
+      <input type="text" id="cedula" name="cedula" required>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="phone" required>
+
+      <label for="fecha-ingreso">Fecha de ingreso a la universidad:</label>
+      <input type="date" id="fecha-ingreso" name="admissionDate" required>
+
+      <label for="fecha-egreso">Fecha de egreso de la universidad:</label>
+      <input type="date" id="fecha-egreso" name="graduationDate" required>
+
+      <label for="genero">Género:</label>
+      <select id="genero" name="gender">
+        <option value="masculino">Masculino</option>
+        <option value="femenino">Femenino</option>
+        <option value="otro">Otro</option>
+      </select>
+      <input type="submit" value="Guardar Datos">
+      
+    </form>
+  </div>
+</body>
+</html>

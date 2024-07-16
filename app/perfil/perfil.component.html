@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seguimiento de Graduados</title>
+  <link rel="stylesheet" type="text/css" href="/Angular/src/app/perfil/perfil.component.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="/Angular/src/app/assets/Img/logouleam.png" alt="ULEAM">
+    </div>
+    <nav>
+      <a href="/Angular/src/app/menu/menu.component.html">
+        <button><h3>Regresar</h3></button>
+      </a>
+      <a>
+        <button class="add-profile-button" onclick="showAddProfileForm()">Nuevo Perfil</button>
+      </a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1 class="text-center">Seguimiento de Graduados ULEAM</h1>
+  
+    <h1 class="text-center">Graduados</h1>
+    <div class="card-container">
+  
+      <!-- Card 1 -->
+      <div class="card" id="JonathanSolorzano">
+        <h2>Jonathan Solorzano</h2>
+        <p>Edad: 24</p>
+        <p>Carrera: Tecnologias de la infromacion</p>
+        <p>Universidad: Universidad Laica Eloy Alfaro de Manabí</p>
+        <p>Año de graduación: 2020</p>
+        <div class="info">
+          <p>Email: <a href="mailto:jonathan&#64;email.com">jonathan&#64;email.com</a></p>
+          <p>Teléfono: +593985154321</p>
+          <p>Dirección: Av. Manabí, Portoviejo, Ecuador</p>
+          <p>Trabajo actual: Si</p>
+          <p>Tiempo sin trabajo: 3 meses</p>
+          <h3>Experiencia Laboral</h3>
+          <ul>
+            <li>XYZ Corp - Desarrollador de software - 2 años</li>
+            <li>ABC Inc - Analista de datos - 1 año</li>
+          </ul>
+        </div>
+        <nav>
+          <button onclick="showEditForm('JonathanSolorzano')">Editar</button>
+          <button onclick="confirmDelete('JonathanSolorzano')">Eliminar</button>
+        </nav>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card" id="IrmaSolorzano">
+        <h2>Irma Solorzano</h2>
+        <p>Edad: 23</p>
+        <p>Carrera: turismo </p>
+        <p>Universidad: Universidad Laica Eloy Alfaro de Manabí</p>
+        <p>Año de graduación: 2019</p>
+        <div class="info">
+          <p>Email: <a href="mailto:irma&#64;email.com">irma&#64;email.com</a></p>
+          <p>Teléfono: +593 987654321</p>
+          <p>Dirección: Av. Manabí, Portoviejo, Ecuador</p>
+          <p>Trabajo actual: no</p>
+          <p>Tiempo sin trabajo: 6 meses</p>
+          <h3>Experiencia Laboral</h3>
+          <ul>
+            <li>XYZ Corp - Desa - 2 años atencion al cliente</li>
+            <li>ABC Inc - voluntariados - 1 año</li>
+          </ul>
+        </div>
+        <nav>
+          <button onclick="showEditForm('IrmaSolorzano')">Editar</button>
+          <button onclick="confirmDelete('IrmaSolorzano')">Eliminar</button>
+        </nav>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card" id="JuniorLopez">
+        <h2>Junior Lopez</h2>
+        <p>Edad: 29</p>
+        <p>Carrera: Comercio exterior</p>
+        <p>Universidad: Universidad Laica Eloy Alfaro de Manabí</p>
+        <p>Año de graduación: 2021</p>
+        <div class="info">
+          <p>Email: <a href="mailto:junior&#64;email.com">junior&#64;email.com</a></p>
+          <p>Teléfono: +593 912258465</p>
+          <p>Dirección: Av. Manabí, Portoviejo, Ecuador</p>
+          <p>Trabajo actual: Si</p>
+          <p>Tiempo sin trabajo: 1 meses</p>
+          <h3>Experiencia Laboral</h3>
+          <ul>
+            <li>XYZ Corp - 2 años marketing digital</li>
+            <li>ABC Inc - Analista de datos - 1 año</li>
+          </ul>
+        </div>
+        <nav>
+          <button onclick="showEditForm('JuniorLopez')">Editar</button>
+          <button onclick="confirmDelete('JuniorLopez')">Eliminar</button>
+        </nav>
+      </div>
+
+      <!-- Agrega más tarjetas según sea necesario -->
+
+    </div>
+
+    <!-- Formulario de edición -->
+    <div id="editForm" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(250, 250, 250); padding: 20px; border-radius: 40px; box-shadow: 0px 20px 20px rgb(255, 255, 255, 0.1);">
+      <h2>Editar Perfil</h2>
+      <form id="editProfileForm">
+        <input type="hidden" id="editCardId">
+        <label for="editName">Nombre:</label>
+        <input type="text" id="editName" name="name"><br><br>
+        <label for="editAge">Edad:</label>
+        <input type="text" id="editAge" name="age"><br><br>
+        <label for="editCareer">Carrera:</label>
+        <input type="text" id="editCareer" name="career"><br><br>
+        <label for="editUniversity">Universidad:</label>
+        <input type="text" id="editUniversity" name="university"><br><br>
+        <label for="editGraduationYear">Año de graduación:</label>
+        <input type="text" id="editGraduationYear" name="graduationYear"><br><br>
+        <label for="editEmail">Email:</label>
+        <input type="email" id="editEmail" name="email"><br><br>
+        <label for="editPhone">Teléfono:</label>
+        <input type="text" id="editPhone" name="phone"><br><br>
+        <label for="editAddress">Dirección:</label>
+        <input type="text" id="editAddress" name="address"><br><br>
+        <label for="editCurrentJob">Trabajo actual:</label>
+        <input type="text" id="editCurrentJob" name="currentJob"><br><br>
+        <label for="editUnemploymentTime">Tiempo sin trabajo:</label>
+        <input type="text" id="editUnemploymentTime" name="unemploymentTime"><br><br>
+        <label for="editExperience">Experiencia Laboral:</label>
+        <textarea id="editExperience" name="experience"></textarea><br><br>
+        <nav>
+          <button type="button" onclick="saveChanges()">Guardar</button>
+          <button type="button" onclick="hideEditForm()">Cancelar</button>
+        </nav>
+      </form>
+    </div>
+  </div>
+
+  <div id="addProfileForm" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(250, 250, 250); padding: 20px; border-radius: 40px; box-shadow: 0px 20px 20px rgba(255, 255, 255, 0.1);">
+    <h2>Agregar Nuevo Perfil</h2>
+    <form id="addNewProfileForm">
+      <label for="newName">Nombre:</label>
+      <input type="text" id="newName" name="name"><br><br>
+      <label for="newAge">Edad:</label>
+      <input type="text" id="newAge" name="age"><br><br>
+      <label for="newCareer">Carrera:</label>
+      <input type="text" id="newCareer" name="career"><br><br>
+      <label for="newUniversity">Universidad:</label>
+      <input type="text" id="newUniversity" name="university"><br><br>
+      <label for="newGraduationYear">Año de graduación:</label>
+      <input type="text" id="newGraduationYear" name="graduationYear"><br><br>
+      <label for="newEmail">Email:</label>
+      <input type="email" id="newEmail" name="email"><br><br>
+      <label for="newPhone">Teléfono:</label>
+      <input type="text" id="newPhone" name="phone"><br><br>
+      <label for="newAddress">Dirección:</label>
+      <input type="text" id="newAddress" name="address"><br><br>
+      <label for="newCurrentJob">Trabajo actual:</label>
+      <input type="text" id="newCurrentJob" name="currentJob"><br><br>
+      <label for="newUnemploymentTime">Tiempo sin trabajo:</label>
+      <input type="text" id="newUnemploymentTime" name="unemploymentTime"><br><br>
+      <label for="newExperience">Experiencia Laboral:</label>
+      <textarea id="newExperience" name="experience"></textarea><br><br>
+      <nav>
+        <button type="button" onclick="saveNewProfile()">Guardar</button>
+        <button type="button" onclick="hideAddProfileForm()">Cancelar</button>
+      </nav>
+    </form>
+  </div>
+
+   <script>
+    function showEditForm(cardId) {
+      const card = document.getElementById(cardId);
+      const name = card.querySelector('h2').textContent.trim();
+      const age = card.querySelector('p:nth-of-type(1)').textContent.split(':')[1].trim();
+      const career = card.querySelector('p:nth-of-type(2)').textContent.split(':')[1].trim();
+      const university = card.querySelector('p:nth-of-type(3)').textContent.split(':')[1].trim();
+      const graduationYear = card.querySelector('p:nth-of-type(4)').textContent.split(':')[1].trim();
+      const email = card.querySelector('.info p:nth-of-type(1) a').textContent;
+      const phone = card.querySelector('.info p:nth-of-type(2)').textContent.trim().replace(/[^0-9]/g, '');
+      const address = card.querySelector('.info p:nth-of-type(3)').textContent.split(':')[1].trim();
+      const currentJob = card.querySelector('.info p:nth-of-type(4)').textContent.split(':')[1].trim();
+      const unemploymentTime = card.querySelector('.info p:nth-of-type(5)').textContent.split(':')[1].trim();
+      const experienceList = card.querySelectorAll('.info ul li');
+      let experience = '';
+      experienceList.forEach(item => {
+        experience += `${item.textContent}\n`;
+      });
+
+      document.getElementById('editCardId').value = cardId;
+      document.getElementById('editName').value = name;
+      document.getElementById('editAge').value = age;
+      document.getElementById('editCareer').value = career;
+      document.getElementById('editUniversity').value = university;
+      document.getElementById('editGraduationYear').value = graduationYear;
+      document.getElementById('editEmail').value = email;
+      document.getElementById('editPhone').value = phone;
+      document.getElementById('editAddress').value = address;
+      document.getElementById('editCurrentJob').value = currentJob;
+      document.getElementById('editUnemploymentTime').value = unemploymentTime;
+      document.getElementById('editExperience').value = experience;
+
+      document.getElementById('editForm').style.display = 'block';
+    }
+
+    
+    function saveChanges() {
+      const cardId = document.getElementById('editCardId').value;
+      const name = document.getElementById('editName').value;
+      const age = document.getElementById('editAge').value;
+      const career = document.getElementById('editCareer').value;
+      const university = document.getElementById('editUniversity').value;
+      const graduationYear = document.getElementById('editGraduationYear').value;
+      const email = document.getElementById('editEmail').value;
+      const phone = document.getElementById('editPhone').value;
+      const address = document.getElementById('editAddress').value;
+      const currentJob = document.getElementById('editCurrentJob').value;
+      const unemploymentTime = document.getElementById('editUnemploymentTime').value;
+      const experience = document.getElementById('editExperience').value;
+
+      // Update the card with new data
+      const card = document.getElementById(cardId);
+      card.querySelector('h2').textContent = name;
+      card.querySelector('p:nth-of-type(1)').textContent = `Edad: ${age}`;
+      card.querySelector('p:nth-of-type(2)').textContent = `Carrera: ${career}`;
+      card.querySelector('p:nth-of-type(3)').textContent = `Universidad: ${university}`;
+      card.querySelector('p:nth-of-type(4)').textContent = `Año de graduación: ${graduationYear}`;
+      card.querySelector('.info p:nth-of-type(1) a').textContent = email;
+      card.querySelector('.info p:nth-of-type(2)').textContent = `Teléfono: ${phone}`;
+      card.querySelector('.info p:nth-of-type(3)').textContent = `Dirección: ${address}`;
+      card.querySelector('.info p:nth-of-type(4)').textContent = `Trabajo actual: ${currentJob}`;
+      card.querySelector('.info p:nth-of-type(5)').textContent = `Tiempo sin trabajo: ${unemploymentTime}`;
+
+      const ul = card.querySelector('.info ul');
+      ul.innerHTML = '';
+      const experienceItems = experience.split('\n').filter(item => item.trim() !== '');
+      experienceItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+
+      // Hide the edit form
+      document.getElementById('editForm').style.display = 'none';
+    }
+
+    function hideEditForm() {
+      document.getElementById('editForm').style.display = 'none';
+    }
+
+    function showAddProfileForm() {
+      document.getElementById('addProfileForm').style.display = 'block';
+    }
+
+    function hideAddProfileForm() {
+      document.getElementById('addProfileForm').style.display = 'none';
+    }
+
+    function saveNewProfile() {
+      const name = document.getElementById('newName').value;
+      const age = document.getElementById('newAge').value;
+      const career = document.getElementById('newCareer').value;
+      const university = document.getElementById('newUniversity').value;
+      const graduationYear = document.getElementById('newGraduationYear').value;
+      const email = document.getElementById('newEmail').value;
+      const phone = document.getElementById('newPhone').value;
+      const address = document.getElementById('newAddress').value;
+      const currentJob = document.getElementById('newCurrentJob').value;
+      const unemploymentTime = document.getElementById('newUnemploymentTime').value;
+      const experience = document.getElementById('newExperience').value;
+
+      // Create new card with new profile data
+      const cardContainer = document.querySelector('.card-container');
+      const newCard = document.createElement('div');
+      newCard.classList.add('card');
+      newCard.id = name.replace(/\s+/g, '');
+
+      newCard.innerHTML = `
+        <h2>${name}</h2>
+        <p>Edad: ${age}</p>
+        <p>Carrera: ${career}</p>
+        <p>Universidad: ${university}</p>
+        <p>Año de graduación: ${graduationYear}</p>
+        <div class="info">
+          <p>Email: <a href="mailto:${email}">${email}</a></p>
+          <p>Teléfono: ${phone}</p>
+          <p>Dirección: ${address}</p>
+          <p>Trabajo actual: ${currentJob}</p>
+          <p>Tiempo sin trabajo: ${unemploymentTime}</p>
+          <h3>Experiencia Laboral</h3>
+          <ul></ul>
+        </div>
+        <nav>
+          <button onclick="showEditForm('${name.replace(/\s+/g, '')}')">Editar</button>
+          <button onclick="confirmDelete('${name.replace(/\s+/g, '')}')">Eliminar</button>
+        </nav>
+      `;
+
+      const ul = newCard.querySelector('.info ul');
+      const experienceItems = experience.split('\n').filter(item => item.trim() !== '');
+      experienceItems.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        ul.appendChild(li);
+      });
+
+      cardContainer.appendChild(newCard);
+
+      // Hide the add profile form
+      document.getElementById('addProfileForm').style.display = 'none';
+    }
+
+    function confirmDelete(cardId) {
+      const confirmDelete = confirm('¿Estás seguro de que quieres eliminar este perfil?');
+      if (confirmDelete) {
+        const card = document.getElementById(cardId);
+        card.remove();
+      }
+    }
+    
+  </script>
+  
+
+</body>
+</html>
